@@ -1,5 +1,8 @@
 
 @extends('layouts.admin')
+
+@section('title', 'Home')
+
 @section('content')
 
     <div class="app-content content">
@@ -17,7 +20,7 @@
                                             <h1><i class="cc BTC warning font-large-2" title="BTC"></i></h1>
                                         </div>
                                         <div class="col-5 pl-2">
-                                            <h4>أجمالي المبيعات </h4>
+                                            <h4>{{__('admin/home.total sales')}}</h4>
                                          </div>
                                         <div class="col-5 text-right">
                                             <h4>$9,980</h4>
@@ -42,7 +45,7 @@
                                             <h1><i class="cc ETH blue-grey lighten-1 font-large-2" title="ETH"></i></h1>
                                         </div>
                                         <div class="col-5 pl-2">
-                                            <h4>أجمالي الطلبات</h4>
+                                            <h4>{{__('admin/home.total orders')}}</h4>
                                          </div>
                                         <div class="col-5 text-right">
                                             <h4>$944</h4>
@@ -66,7 +69,7 @@
                                             <h1><i class="cc XRP info font-large-2" title="XRP"></i></h1>
                                         </div>
                                         <div class="col-5 pl-2">
-                                            <h4>عدد المنتجات </h4>
+                                            <h5>{{__('admin/home.number of products')}} </h5>
                                          </div>
                                         <div class="col-5 text-right">
                                             <h4>200</h4>
@@ -90,7 +93,7 @@
                                             <h1><i class="cc XRP info font-large-2" title="XRP"></i></h1>
                                         </div>
                                         <div class="col-5 pl-2">
-                                            <h4>عدد العملاء</h4>
+                                            <h4>{{__('admin/home.number of clients')}}</h4>
                                          </div>
                                         <div class="col-5 text-right">
                                             <h4>2000</h4>
@@ -110,10 +113,10 @@
 
                 <!-- Sell Orders & Buy Order -->
                 <div class="row match-height">
-                    <div class="col-12 col-xl-8">
+                    <div class="col-12 col-xl-7">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">أحدث الطلبات </h4>
+                                <h4 class="card-title">{{__('admin/home.newest Orders')}} </h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                  </div>
@@ -123,11 +126,11 @@
                                     <table class="table table-de mb-0">
                                         <thead>
                                         <tr>
-                                            <th>رقم الطلب</th>
-                                            <th>العميل</th>
-                                            <th>السعر</th>
-                                            <th>حاله الطلب</th>
-                                            <th>الاجمالي</th>
+                                            <th>{{__('admin/home.no of order')}}</th>
+                                            <th>{{__('admin/home.client')}}</th>
+                                            <th>{{__('admin/home.price')}}</th>
+                                            <th>{{__('admin/home.status')}}</th>
+                                            <th>{{__('admin/home.total')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -145,10 +148,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-xl-4">
+                    <div class="col-12 col-xl-5">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">اخر التقيمات</h4>
+                                <h4 class="card-title">{{__('admin/home.latest ratings')}}</h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                  </div>
@@ -158,9 +161,9 @@
                                     <table class="table table-de mb-0">
                                         <thead>
                                         <tr>
-                                            <th> العميل</th>
-                                            <th>المنتج</th>
-                                            <th>التقييم </th>
+                                            <th> {{__('admin/home.client')}}</th>
+                                            <th>{{__('admin/home.product')}}</th>
+                                            <th>{{__('admin/home.rating')}} </th>
                                         </tr>
                                         </thead>
                                         <tbody>
