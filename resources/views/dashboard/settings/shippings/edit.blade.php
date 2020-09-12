@@ -1,5 +1,8 @@
 
 @extends('layouts.admin')
+
+@section('title', 'shipping methods')
+
 @section('content')
     <div class="app-content content">
         <div class="content-wrapper">

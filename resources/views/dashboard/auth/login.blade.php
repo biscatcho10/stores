@@ -1,5 +1,7 @@
 @extends('layouts.login')
 
+@section('title', 'admin login')
+
 @section('content')
 
     <section class="flexbox-container">

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 /*
 |--------------------------------------------------------------------------
 | admin Routes
@@ -21,10 +21,18 @@ Route::group([
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
 ], function () {
 
-    Route::group(['namespace' => 'Dashboard', 'middleware' => 'auth:admin','prefix' => 'admin'], function () {
+    // Login
+    Route::group(['namespace' => 'Dashboard', 'middleware' => 'guest:admin', 'prefix' => 'admin'], function () {
+
+        Route::get('login', 'LoginController@login')->name('admin.login');
+        Route::post('login', 'LoginController@postLogin')->name('admin.post.login');
+    });
+
+    // Dashborad
+    Route::group(['namespace' => 'Dashboard', 'middleware' => 'auth:admin', 'prefix' => 'admin'], function () {
 
         Route::get('/', 'DashboardController@index')->name('admin.dashboard');  // the first page admin visits if authenticated
-        Route::get('logout','LoginController@logout') -> name('admin.logout');
+        Route::get('logout', 'LoginController@logout')->name('admin.logout');
 
         Route::group(['prefix' => 'settings'], function () {
             Route::get('shipping-methods/{type}', 'SettingsController@editShippingMethods')->name('edit.shippings.methods');
@@ -34,15 +42,6 @@ Route::group([
         Route::group(['prefix' => 'profile'], function () {
             Route::get('edit', 'ProfileController@editProfile')->name('edit.profile');
             Route::put('update', 'ProfileController@updateprofile')->name('update.profile');
-         });
-
+        });
     });
-
-    Route::group(['namespace' => 'Dashboard', 'middleware' => 'guest:admin','prefix' => 'admin'], function () {
-
-        Route::get('login', 'LoginController@login')->name('admin.login');
-        Route::post('login', 'LoginController@postLogin')->name('admin.post.login');
-
-    });
-
 });

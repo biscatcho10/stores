@@ -19,7 +19,7 @@ class SettingsController extends Controller
             $shippingMethod = Setting::where('key', 'free_shipping_label')->first();
 
 
-        elseif ($type === 'inner')
+        elseif ($type === 'local')
             $shippingMethod = Setting::where('key', 'local_label')->first();
 
         elseif ($type === 'outer')
