@@ -2,18 +2,16 @@
 
 namespace App\Models;
 
-
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Brand extends Model
 {
-
     use Translatable;
 
-    protected $table = 'categories';
+    protected $table = 'brands';
 
-    protected $fillable = ['parent_id', 'slug', 'is_active'];
+    protected $fillable = ['is_active', 'photo'];
 
     protected $hidden = ['translations'];
 
@@ -22,16 +20,6 @@ class Category extends Model
     protected $translatedAttributes = ['name'];
 
     protected $casts = ['is_active' => 'boolean'];
-
-    public function scopeParent($q)
-    {
-        return $q->whereNull('parent_id');
-    }
-
-    public function scopeChild($query)
-    {
-        return $query->whereNotNull('parent_id');
-    }
 
     public function getActive()
     {
@@ -42,8 +30,7 @@ class Category extends Model
         }
     }
 
-    public function _parent()
-    {
-        return $this->belongsTo(self::class, 'parent_id');
+    public function getPhotoAttribute($val){
+        return ($val != null) ? asset('assets/images/brands/'.$val) : "" ;
     }
 }

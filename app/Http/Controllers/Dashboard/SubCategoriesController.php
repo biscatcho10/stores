@@ -25,7 +25,6 @@ class SubCategoriesController extends Controller
 
     public function store(SubCategoryRequest $request)
     {
-
         try {
 
             DB::beginTransaction();
@@ -48,14 +47,13 @@ class SubCategoriesController extends Controller
             DB::rollback();
             return redirect()->route('admin.subcategories')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
-
     }
 
 
     public function edit($id)
     {
         //get specific categories and its translations
-        $category = Category::orderBy('id', 'DESC')->find($id);
+        $category = Category::find($id);
 
         if (!$category)
             return redirect()->route('admin.subcategories')->with(['error' => 'هذا القسم غير موجود ']);
@@ -100,8 +98,8 @@ class SubCategoriesController extends Controller
     {
 
         try {
-            $category = Category::orderBy('id', 'DESC')->find($id);
-            
+            $category = Category::find($id);
+
             if (!$category)
                 return redirect()->route('admin.subcategories')->with(['error' => 'هذا القسم غير موجود ']);
 
