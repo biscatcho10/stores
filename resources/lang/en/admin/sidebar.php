@@ -15,7 +15,7 @@ return [
     'all sub categories' => 'All Sub Categories',
     'add new sub category' => 'Add New Sub Category',
 
-    'sub vendors' => 'Vendors',
+    'vendors' => 'Vendors',
     'all vendors' => 'All Vendors',
     'add new vendor' => 'Add New Vendor',
 
