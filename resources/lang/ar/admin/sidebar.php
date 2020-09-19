@@ -19,6 +19,10 @@ return [
     'all vendors' => 'كل المتاجر',
     'add new vendor' => 'إضافة متجر جديد',
 
+    'tags' => 'العلامات',
+    'all tags' => 'كل العلامات',
+    'add new tag' => 'إضافة علامة جديد',
+
     'settings' => 'الاعدادات',
     'shipping methods' => 'وسائل التوصيل',
     'free shipping' => 'توصيل مجاني',

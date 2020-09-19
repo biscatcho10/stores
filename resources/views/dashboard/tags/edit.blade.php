@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', __("admin\brands.add brand") )
+@section('title', __("admin/tags.edit tag"))
 
 @section('content')
 
@@ -11,13 +11,11 @@
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a
-                                    href="{{route('admin.dashboard')}}">{{__("admin\brands.home")}} </a>
+                            <li class="breadcrumb-item"><a href="">{{__("admin/tags.home")}} </a>
                             </li>
-                            <li class="breadcrumb-item"><a href="{{route('admin.brands')}}">
-                                    {{__("admin\brands.brands")}} </a>
+                            <li class="breadcrumb-item"><a href="{{route('admin.tags')}}"> {{__("admin/tags.tags")}} </a>
                             </li>
-                            <li class="breadcrumb-item active"> {{__("admin\brands.add brand")}}
+                            <li class="breadcrumb-item active"> {{__("admin/tags.edit tag")}} - {{$tag -> name}}
                             </li>
                         </ol>
                     </div>
@@ -31,7 +29,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title" id="basic-layout-form"> {{__("admin\brands.add brand")}} </h4>
+                                <h4 class="card-title" id="basic-layout-form"> {{__("admin/tags.edit tag")}} </h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -46,47 +44,29 @@
                             @include('dashboard.includes.alerts.errors')
                             <div class="card-content collapse show">
                                 <div class="card-body">
-                                    <form class="form" action="{{route('admin.brands.store')}}" method="POST"  enctype="multipart/form-data">
+                                    <form class="form" action="{{route('admin.tags.update',$tag->id)}}" method="POST" enctype="multipart/form-data">
                                         @csrf
-                                        <div class="form-group">
-                                            <label> {{__("admin\brands.image")}} </label>
-                                            <label id="projectinput7" class="file center-block">
-                                                <input type="file" id="file" name="photo">
-                                                <span class="file-custom"></span>
-                                            </label>
-                                            @error('photo')
-                                            <span class="text-danger">{{$message}}</span>
-                                            @enderror
-                                        </div>
+
+                                        <input name="id" value="{{$tag->id}}" type="hidden">
 
                                         <div class="form-body">
-
-                                            <h4 class="form-section"><i class="ft-home"></i>
-                                                {{__("admin\brands.brand data")}}
-                                            </h4>
+                                            <h4 class="form-section"><i class="ft-home"></i> {{__("admin/tags.tag data")}} </h4>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="projectinput1"> {{__("admin\brands.name")}}
-                                                        </label>
-                                                        <input type="text" id="name" class="form-control"
-                                                            placeholder="  " value="{{old('name')}}" name="name">
+                                                        <label for="name"> {{__("admin/tags.name")}}</label>
+                                                        <input type="text" id="name" class="form-control" value="{{$tag -> name}}" name="name">
                                                         @error("name")
-                                                        <span class="text-danger">{{$message}}</span>
+                                                            <span class="text-danger">{{$message}}</span>
                                                         @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <div class="form-group mt-1">
-                                                        <input type="checkbox" value="1" name="is_active"
-                                                            id="switcheryColor4" class="switchery" data-color="success"
-                                                            checked />
-                                                        <label for="switcheryColor4"
-                                                            class="card-title ml-1">{{__("admin\brands.status")}}
-                                                        </label>
-
-                                                        @error("is_active")
-                                                        <span class="text-danger">{{$message }}</span>
+                                                    <div class="form-group">
+                                                        <label for="slug"> {{__("admin/tags.slug")}}</label>
+                                                        <input type="text" id="slug" class="form-control"  value="{{$tag -> slug}}" name="slug">
+                                                        @error("slug")
+                                                            <span class="text-danger">{{$message}}</span>
                                                         @enderror
                                                     </div>
                                                 </div>
@@ -96,14 +76,14 @@
                                         <div class="form-actions">
                                             <button type="button" class="btn btn-warning mr-1"
                                                 onclick="history.back();">
-                                                <i class="ft-x"></i> {{__("admin\brands.back")}}
+                                                <i class="ft-x"></i> {{__("admin/tags.back")}}
                                             </button>
                                             <button type="submit" class="btn btn-primary">
-                                                <i class="la la-check-square-o"></i> {{__("admin\brands.save")}}
+                                                <i class="la la-check-square-o"></i> {{__("admin/tags.update")}}
                                             </button>
                                         </div>
-
                                     </form>
+
                                 </div>
                             </div>
                         </div>
