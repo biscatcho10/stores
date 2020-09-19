@@ -19,6 +19,10 @@ return [
     'all vendors' => 'All Vendors',
     'add new vendor' => 'Add New Vendor',
 
+    'tags' => 'Tags',
+    'all tags' => 'All Tags',
+    'add new tag' => 'Add New Tag',
+
     'settings' => 'Settings',
     'shipping methods' => 'Shipping Methods',
     'free shipping' => 'Free Shipping',
