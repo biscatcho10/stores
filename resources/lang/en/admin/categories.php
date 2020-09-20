@@ -3,14 +3,21 @@
 return [
 
     'home' => 'Home',
-    'main categories' => 'Main Categories',
-    'all main categories' => 'All Main Categories',
-    'add main categories' => 'Add Main Category',
-    'edit main categories' => 'Edit Main Category',
     'category data' => 'Category Data',
+
+    'main categories' => 'Categories',
+    'all main categories' => 'All Categories',
+    'add main categories' => 'Add Category',
+    'edit main categories' => 'Edit Category',
+
+    // 'main categories' => 'Main Categories',
+    // 'all main categories' => 'All Main Categories',
+    // 'add main categories' => 'Add Main Category',
+    // 'edit main categories' => 'Edit Main Category',
 
 
     'name' => 'Name',
+    'main category' => 'Main Category',
     'slug' => 'Slug',
     'status' => 'Status',
     'image' => 'Image',

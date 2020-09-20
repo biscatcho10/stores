@@ -7,13 +7,17 @@ return [
     'all languages' => 'كل اللغات',
     'add new language' => 'إضافة لغة جديدة',
 
-    'main categories' => 'الاقسام الرئيسية',
-    'all categories' => ' كل الاقسام الرئيسية',
-    'add new category' => 'اضافة قسم رئيسي جديد',
+    'main categories' => 'الاقسام',
+    'all categories' => ' كل الاقسام',
+    'add new category' => 'اضافة قسم جديد',
 
-    'sub categories' => 'الاقسام الفرعية',
-    'all sub categories' => 'كل الاقسام الفرعية',
-    'add new sub category' => 'إضافة قسم فرعي جديد',
+    // 'main categories' => 'الاقسام الرئيسية',
+    // 'all categories' => ' كل الاقسام الرئيسية',
+    // 'add new category' => 'اضافة قسم رئيسي جديد',
+
+    // 'sub categories' => 'الاقسام الفرعية',
+    // 'all sub categories' => 'كل الاقسام الفرعية',
+    // 'add new sub category' => 'إضافة قسم فرعي جديد',
 
     'vendors' => 'المتاجر',
     'all vendors' => 'كل المتاجر',

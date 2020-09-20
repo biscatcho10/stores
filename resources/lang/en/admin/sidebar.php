@@ -7,13 +7,17 @@ return [
     'all languages' => 'All Languages',
     'add new language' => 'Add New Language',
 
-    'main categories' => 'Main Categories',
+    'main categories' => 'Categories',
     'all categories' => 'All Categories',
     'add new category' => 'Add New Category',
 
-    'sub categories' => 'Sub Categories',
-    'all sub categories' => 'All Sub Categories',
-    'add new sub category' => 'Add New Sub Category',
+    // 'main categories' => 'Main Categories',
+    // 'all categories' => 'All Categories',
+    // 'add new category' => 'Add New Category',
+
+    // 'sub categories' => 'Sub Categories',
+    // 'all sub categories' => 'All Sub Categories',
+    // 'add new sub category' => 'Add New Sub Category',
 
     'vendors' => 'Vendors',
     'all vendors' => 'All Vendors',
