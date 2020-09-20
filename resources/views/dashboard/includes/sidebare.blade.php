@@ -23,7 +23,7 @@
 
             <li class="nav-item"><a href=""><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.main categories')}} </span>
-                    <span class="badge badge badge-danger badge-pill float-right mr-2"> {{App\Models\Category::parent()->count()}} </span>
+                    <span class="badge badge badge-danger badge-pill float-right mr-2"> {{App\Models\Category::count()}} </span>
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href=" {{route('admin.maincategories')}} " data-i18n="nav.dash.ecommerce">
@@ -35,7 +35,7 @@
                 </ul>
             </li>
 
-            <li class="nav-item"><a href=""><i class="la la-group"></i>
+            {{-- <li class="nav-item"><a href=""><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.sub categories')}}</span>
                     <span class="badge badge badge-danger badge-pill float-right mr-2">{{App\Models\Category::child()->count()}}</span>
                 </a>
@@ -47,7 +47,7 @@
                             data-i18n="nav.dash.crypto">{{__('admin/sidebar.add new sub category')}}</a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
             <li class="nav-item"><a href=""><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main"> {{__('admin\brands.brands')}}  </span>

@@ -3,14 +3,21 @@
 return [
 
     'home' => 'الرئيسية',
-    'main categories' => 'الاقسام الرئيسية',
-    'all main categories' => 'كل الاقسام الرئيسية',
-    'add main categories' => 'إضافة القسم الرئيسي',
-    'edit main categories' => 'تعديل القسم الرئيسي',
     'category data' => 'بيانات القسم',
+
+    'main categories' => 'الاقسام',
+    'all main categories' => 'كل الاقسام',
+    'add main categories' => 'إضافة القسم',
+    'edit main categories' => 'تعديل القسم',
+
+    // 'main categories' => 'الاقسام الرئيسية',
+    // 'all main categories' => 'كل الاقسام الرئيسية',
+    // 'add main categories' => 'إضافة القسم الرئيسي',
+    // 'edit main categories' => 'تعديل القسم الرئيسي',
 
 
     'name' => 'اسم القسم',
+    'main category' => 'القسم الرئيسي',
     'slug' => 'الاسم بالرابط',
     'status' => 'الحالة',
     'image' => 'الصورة',
