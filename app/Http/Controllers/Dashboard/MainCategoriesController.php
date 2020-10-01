@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Enumerations\CategoryType;
 use App\Http\Requests\MainCategoryRequest;
 use App\Models\Category;
 use Illuminate\Support\Facades\DB;
@@ -36,7 +37,7 @@ class MainCategoriesController extends Controller
                 $request->request->add(['is_active' => 1]);
 
             //if user choose main category then we must remove paret id from the request
-            if ($request->type == 1) //main category
+            if ($request->type == CategoryType::mainCategory) //main category
             {
                 $request->request->add(['parent_id' => null]);
             }
