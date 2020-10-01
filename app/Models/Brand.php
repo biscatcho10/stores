@@ -13,7 +13,7 @@ class Brand extends Model
 
     protected $fillable = ['is_active', 'photo'];
 
-    protected $hidden = ['translations'];
+    // protected $hidden = ['translations'];
 
     protected $with = ['translations'];
 
@@ -30,7 +30,16 @@ class Brand extends Model
         }
     }
 
+    public function scopeActive($q)
+    {
+        return $q->where('is_active', 1);
+    }
+
     public function getPhotoAttribute($val){
         return ($val != null) ? asset('assets/images/brands/'.$val) : "" ;
+    }
+
+    public function products(){
+        return $this->hasMany(Product::class, 'brand_id');
     }
 }
