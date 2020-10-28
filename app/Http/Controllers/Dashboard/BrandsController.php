@@ -101,7 +101,7 @@ class BrandsController extends Controller
             $brand->save();
 
             DB::commit();
-            return redirect()->route('admin.brands')->with(['success' => 'تم ألتحديث بنجاح']);
+            return redirect()->route('admin.brands')->with(['success' => 'تم التحديث بنجاح']);
         } catch (\Exception $ex) {
 
             DB::rollback();

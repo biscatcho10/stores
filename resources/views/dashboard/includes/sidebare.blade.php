@@ -1,27 +1,29 @@
-<div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true">
+<div class="main-menu menu-fixed menu-dark menu-accordion    menu-shadow " data-scroll-to-active="true">
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
-            <li class="nav-item active"><a href=""><i class="la la-mouse-pointer"></i><span class="menu-title"
-                        data-i18n="nav.add_on_drag_drop.main">{{__('admin\brands.home')}} </span></a>
+            <li class="nav-item active">
+                <a href=""><i class="la la-mouse-pointer"></i>
+                    <span class="menu-title" data-i18n="nav.add_on_drag_drop.main">{{__('admin\brands.home')}} </span>
+                </a>
             </li>
 
             <li class="nav-item">
-                <a href=""><i class="la la-home"></i>
+                <a href=""><i class="la la-language"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.languages')}} </span>
-                    <span class="badge badge badge-info badge-pill float-right mr-2"> </span>
+                    <span class="badge badge badge-info badge-pill float-right mr-2"> {{App\Models\Language::count()}} </span>
                 </a>
                 <ul class="menu-content">
-                    <li class=""><a class="menu-item" href="" data-i18n="nav.dash.ecommerce">
+                    <li class=""><a class="menu-item" href=" {{route('admin.languages')}} " data-i18n="nav.dash.ecommerce">
                             {{__('admin/sidebar.all languages')}} </a>
                     </li>
-                    <li><a class="menu-item" href=""
+                    <li><a class="menu-item" href=" {{route('admin.languages.create')}} "
                             data-i18n="nav.dash.crypto">{{__('admin/sidebar.add new language')}}</a>
                     </li>
                 </ul>
             </li>
 
-            <li class="nav-item"><a href=""><i class="la la-group"></i>
+            <li class="nav-item"><a href=""><i class="la la-share-alt"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.main categories')}} </span>
                     <span class="badge badge badge-danger badge-pill float-right mr-2"> {{App\Models\Category::count()}} </span>
                 </a>
@@ -49,7 +51,7 @@
                 </ul>
             </li> --}}
 
-            <li class="nav-item"><a href=""><i class="la la-group"></i>
+            <li class="nav-item"><a href=""><i class="la la-bolt"></i>
                     <span class="menu-title" data-i18n="nav.dash.main"> {{__('admin\brands.brands')}}  </span>
                     <span
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Brand::count()}}</span>
@@ -64,7 +66,7 @@
             </li>
 
             <li class="nav-item">
-                <a href=""><i class="la la-group"></i>
+                <a href=""><i class="la la-tags"></i>
                     <span class="menu-title" data-i18n="nav.dash.main"> {{__('admin\sidebar.tags')}}  </span>
                     <span
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Tag::count()}}
@@ -81,7 +83,7 @@
             </li>
 
             <li class="nav-item">
-                <a href=""><i class="la la-group"></i>
+                <a href=""><i class="la la-shopping-cart"></i>
                     <span class="menu-title" data-i18n="nav.dash.main"> {{__('admin\products.products')}}  </span>
                     <span
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Product::count()}}
@@ -97,9 +99,9 @@
                 </ul>
             </li>
 
-            <li class="nav-item"><a href=""><i class="la la-male"></i>
+            <li class="nav-item"><a href=""><i class="la la-bank"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.vendors')}} </span>
-                    <span class="badge badge badge-success badge-pill float-right mr-2"> </span>
+                    <span class="badge badge badge-success badge-pill float-right mr-2"> 10 </span>
                 </a>
                 <ul class="menu-content">
                     <li class=""><a class="menu-item" href=" " data-i18n="nav.dash.ecommerce">
@@ -142,7 +144,7 @@
             </li> --}}
 
 
-            <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
+            <li class=" nav-item"><a href="#"><i class="la la-edit"></i><span class="menu-title"
                         data-i18n="nav.templates.main"> {{__('admin/sidebar.settings')}}</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">
@@ -239,7 +241,7 @@
                             layout</a>
                     </li>
                     <li class="navigation-divider"></li>
-                    <li><a class="menu-item" href="layout-light.html" data-i18n="nav.page_layouts.light_layout">Light
+                    <li><a class="menu-item" href="layout-dark.html" data-i18n="nav.page_layouts.dark_layout">dark
                             layout</a>
                     </li>
                     <li><a class="menu-item" href="layout-dark.html" data-i18n="nav.page_layouts.dark_layout">Dark
@@ -254,7 +256,7 @@
             <li class=" nav-item"><a href="#"><i class="la la-navicon"></i><span class="menu-title"
                         data-i18n="nav.navbars.main">Navbars</span></a>
                 <ul class="menu-content">
-                    <li><a class="menu-item" href="navbar-light.html" data-i18n="nav.navbars.nav_light">Navbar Light</a>
+                    <li><a class="menu-item" href="navbar-dark.html" data-i18n="nav.navbars.nav_dark">Navbar dark</a>
                     </li>
                     <li><a class="menu-item" href="navbar-dark.html" data-i18n="nav.navbars.nav_dark">Navbar Dark</a>
                     </li>
@@ -323,8 +325,8 @@
                     <li><a class="menu-item" href="vertical-nav-static.html"
                             data-i18n="nav.vertical_nav.vertical_nav_static">Static Navigation</a>
                     </li>
-                    <li><a class="menu-item" href="vertical-nav-light.html"
-                            data-i18n="nav.vertical_nav.vertical_nav_light">Navigation Light</a>
+                    <li><a class="menu-item" href="vertical-nav-dark.html"
+                            data-i18n="nav.vertical_nav.vertical_nav_dark">Navigation dark</a>
                     </li>
                     <li><a class="menu-item" href="vertical-nav-dark.html"
                             data-i18n="nav.vertical_nav.vertical_nav_dark">Navigation Dark</a>
@@ -421,8 +423,8 @@
             <li class=" nav-item"><a href="#"><i class="la la-download"></i><span class="menu-title"
                         data-i18n="nav.footers.main">Footers</span></a>
                 <ul class="menu-content">
-                    <li><a class="menu-item" href="footer-light.html" data-i18n="nav.footers.footer_light">Footer
-                            Light</a>
+                    <li><a class="menu-item" href="footer-dark.html" data-i18n="nav.footers.footer_dark">Footer
+                            dark</a>
                     </li>
                     <li><a class="menu-item" href="footer-dark.html" data-i18n="nav.footers.footer_dark">Footer Dark</a>
                     </li>
@@ -554,8 +556,8 @@
                             data-i18n="nav.starter_kit.static_layout">Static layout</a>
                     </li>
                     <li class="navigation-divider"></li>
-                    <li><a class="menu-item" href="../../../starter-kit/rtl/vertical-menu-template/layout-light.html"
-                            data-i18n="nav.starter_kit.light_layout">Light layout</a>
+                    <li><a class="menu-item" href="../../../starter-kit/rtl/vertical-menu-template/layout-dark.html"
+                            data-i18n="nav.starter_kit.dark_layout">dark layout</a>
                     </li>
                     <li><a class="menu-item" href="../../../starter-kit/rtl/vertical-menu-template/layout-dark.html"
                             data-i18n="nav.starter_kit.dark_layout">Dark layout</a>
@@ -865,8 +867,8 @@
                     <li><a class="menu-item" href="content-text-utilities.html"
                             data-i18n="nav.content.content_text_utilities">Text utilities</a>
                     </li>
-                    <li><a class="menu-item" href="content-syntax-highlighter.html"
-                            data-i18n="nav.content.content_syntax_highlighter">Syntax highlighter</a>
+                    <li><a class="menu-item" href="content-syntax-highdarker.html"
+                            data-i18n="nav.content.content_syntax_highdarker">Syntax highdarker</a>
                     </li>
                     <li><a class="menu-item" href="content-helper-classes.html"
                             data-i18n="nav.content.content_helper_classes">Helper classes</a>

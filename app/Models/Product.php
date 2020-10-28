@@ -47,6 +47,15 @@ class Product extends Model
         'deleted_at',
     ];
 
+    public function getActive()
+    {
+        if (app()->getLocale() == "ar") {
+            return  $this->is_active  == 0 ?  'غير مفعل'   : 'مفعل';
+        } else {
+            return  $this->is_active  == 0 ?  'Not Active' : 'Active';
+        }
+    }
+
     public function brand()
     {
         return $this->belongsTo(Brand::class)->withDefault();

@@ -67,8 +67,8 @@
                                                     <div class="form-group">
                                                         <label for="slug">{{__("admin\products.slug")}}
                                                         </label>
-                                                        <input type="text" id="slug" class="form-control"
-                                                            placeholder="  " value="{{old('slug')}}" slug="slug">
+                                                        <input type="text" name="slug" id="slug" class="form-control"
+                                                            placeholder="  " value="{{old('slug')}}">
                                                         @error("slug")
                                                         <span class="text-danger">{{$message}}</span>
                                                         @enderror

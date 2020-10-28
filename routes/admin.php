@@ -37,6 +37,18 @@ Route::group([
         // Logout
         Route::get('logout', 'LoginController@logout')->name('admin.logout');
 
+        ########################### Start Languages Routes ##########################
+        Route::group(['prefix' => 'languages'], function () {
+        Route::get('/','LanguagesController@index')->name('admin.languages');
+        Route::get('create','LanguagesController@create')->name('admin.languages.create');
+        Route::post('store','LanguagesController@store')->name('admin.languages.store');
+        Route::get('edit/{id}','LanguagesController@edit')->name('admin.languages.edit');
+        Route::post('update/{id}','LanguagesController@update')->name('admin.languages.update');
+        Route::get('delete/{id}','LanguagesController@destroy')->name('admin.languages.delete');
+        });
+        ############################# End Languages Routes ###########################
+
+
         ########################## Start Settings Routes ###########################
         Route::group(['prefix' => 'settings'], function () {
             Route::get('shipping-methods/{type}', 'SettingsController@editShippingMethods')->name('edit.shippings.methods');
@@ -102,9 +114,18 @@ Route::group([
         Route::get('/','ProductsController@index') -> name('admin.products');
         Route::get('general-infromtion','ProductsController@create') -> name('admin.products.general.create');
         Route::post('store-general-infromtion','ProductsController@store') -> name('admin.products.general.store');
-        Route::get('edit/{id}','ProductsController@edit') -> name('admin.products.edit');
-        Route::post('update/{id}','ProductsController@update') -> name('admin.products.update');
-        Route::get('delete/{id}','ProductsController@destroy') -> name('admin.products.delete');
+
+        Route::get('price/{id}','ProductsController@getPrice') -> name('admin.products.price');
+        Route::post('price','ProductsController@saveProductPrice') -> name('admin.products.price.store');
+
+        Route::get('stock/{id}','ProductsController@getStock') -> name('admin.products.stock');
+        Route::post('stock','ProductsController@saveProductStock') -> name('admin.products.stock.store');
+
+        Route::get('images/{id}','ProductsController@addImages') -> name('admin.products.images');
+        Route::post('images','ProductsController@saveProductImages') -> name('admin.products.images.store');
+        Route::post('images/db','ProductsController@saveProductImagesDB') -> name('admin.products.images.store.db');
+        Route::get('images/delete/{id}', 'ProductsController@deleteImage') -> name('admin.products.delete.images');
+
         });
         ################################## End Products Routes #######################################
 

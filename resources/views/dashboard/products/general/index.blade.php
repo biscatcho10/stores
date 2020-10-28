@@ -1,20 +1,20 @@
 @extends('layouts.admin') @section('content')
 
-@section('title', __("admin\categories.main categories"))
+@section('title', __("admin\products.products"))
 
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="content-header-left col-md-6 col-12 mb-2">
-                <h3 class="content-header-title">{{__("admin\categories.main categories")}}</h3>
+                <h3 class="content-header-title">{{__("admin\products.products")}}</h3>
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="{{ route('admin.dashboard') }}">{{__("admin\categories.home")}}</a>
+                                <a href="{{ route('admin.dashboard') }}">{{__("admin\products.home")}}</a>
                             </li>
                             <li class="breadcrumb-item active">
-                                {{__("admin\categories.main categories")}}
+                                {{__("admin\products.products")}}
                             </li>
                         </ol>
                     </div>
@@ -29,7 +29,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">
-                                    {{__("admin\categories.all main categories")}}
+                                    {{__("admin\products.all products")}}
                                 </h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
@@ -58,34 +58,38 @@
                                     <table class="table display nowrap table-striped table-bordered scroll-horizontal">
                                         <thead class="">
                                             <tr>
-                                                <th>{{__("admin\categories.name")}}</th>
-                                                <th>{{__("admin\categories.main category")}}</th>
-                                                <th>{{__("admin\categories.slug")}}</th>
-                                                <th>{{__("admin\categories.status")}}</th>
-                                                <th>{{__("admin\categories.image")}}</th>
-                                                <th>{{__("admin\categories.actions")}}</th>
+                                                <th>{{__("admin\products.name")}}</th>
+                                                <th>{{__("admin\products.slug")}}</th>
+                                                <th>{{__("admin\products.price")}}</th>
+                                                <th>{{__("admin\products.status")}}</th>
+                                                {{-- <th>{{__("admin\products.image")}}</th> --}}
+                                                <th>{{__("admin\products.actions")}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @isset($categories)
-                                            @foreach($categories as $category)
+                                            @isset($products)
+                                            @foreach($products as $product)
                                             <tr>
-                                                <td>{{$category->name}}</td>
-                                                <td>{{$category ->_parent->name  ?? '--' }}</td>
-                                                <td>{{$category->slug}}</td>
-                                                <td>
-                                                    {{$category -> getActive()}}
-                                                </td>
-                                                <td>
+                                                <td>{{$product->name}}</td>
+                                                <td>{{$product->slug}}</td>
+                                                <td>{{$product->price}}</td>
+                                                <td>{{$product -> getActive()}}</td>
+                                                {{-- <td>
                                                     <img style=" width: 150px;height: 100px;" src="" class="rounded-0" />
-                                                </td>
+                                                </td> --}}
                                                 <td>
                                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                                        <a href="{{route('admin.maincategories.edit',$category -> id)}}"
-                                                            class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">{{__("admin\categories.edit")}}</a>
+                                                        <a href="{{route('admin.products.price',$product->id)}}"
+                                                            class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">
+                                                            {{__("admin\products.price")}}</a>
 
-                                                        <a href="{{route('admin.maincategories.delete',$category -> id)}}"
-                                                            class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">{{__("admin\categories.delete")}}</a>
+                                                        <a href="{{route('admin.products.images',$product->id)}}"
+                                                            class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">
+                                                            {{__("admin\products.product images")}}</a>
+
+                                                        <a href="{{route('admin.products.stock',$product->id)}}"
+                                                            class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">
+                                                            {{__("admin\products.stock")}}</a>
                                                     </div>
                                                 </td>
                                             </tr>
